@@ -46,7 +46,7 @@ on a.book_id = b.id where b.id = 252;
 select * 
 from library_simple.author_has_book  
 left join library_simple.author on author_has_book.author_id = author.id 
-left join library_simple.book on author_has_book.book_id = book_id
+left join library_simple.book on author_has_book.book_id = book.id
 where first_name = 'Van' and last_name = 'Parks';
 
 -- 3.which books where published in 2003?
