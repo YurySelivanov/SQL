@@ -51,5 +51,9 @@ limit 1;
 
 -- Part #3 library_simple database
 -- Find all release dates for book 'Dog With Money'
-select * from library_simple.book b join library_simple.copy c
-on b.id = c.book_id where b.name = 'Dog With Money';
+select * from library_simple.book b 
+left join library_simple.copy c
+on b.id = c.book_id 
+left join library_simple.issuance i
+on c.id = i.copy_id
+where b.name = 'Dog With Money';
